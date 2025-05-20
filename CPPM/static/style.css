@@ -1,1 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url("https://tse2.mm.bing.net/th?id=OIP.7QJlj63KaLloZeXaelRBvAHaEK&pid=Api&P=0&h=220");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.40);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 650px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+form label {
+  width: 100%;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #eadcdc;
+}
+
+form input{
+  width: 95%;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+form select {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px 3px rgba(0, 123, 255, 0.2);
+}
+
+button {
+  width: 60%;
+  padding: 12px;
+  background-color: #0b529df7;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 8px 8px 12px rgba(4, 46, 92, 0.4);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #142a71;
+  box-shadow: 8px 6px 18px rgba(2, 38, 77, 0.5); 
+  transform: translateY(-2px);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#result {
+  margin-top: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+#result-card {
+  margin-top: 30px;
+  background: #ffffffcc;
+  border-left: 6px solid #007bff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+#result-card h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #007bff;
+}
+
+#result-card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.home-container {
+  height: 100vh;
+  width: 100%;
+  background-image: url("https://tse2.mm.bing.net/th?id=OIP._60BnxH-iJWb8TLIhNGQ_gHaE8&pid=Api&P=0&h=220");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+  max-width: 700px;
+  padding: 40px;
+  color: #222;
+  text-align: center;
+}
+
+.glass-card h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #093e76;
+}
+
+.glass-card p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.glass-card ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+  margin: 15px 0;
+}
+
+.glass-card ul li {
+  margin: 8px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.glass-card ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 24px;
+  background-color: #0964c6;
+  color: rgb(237, 227, 227);
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(0,123,255,0.4);
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
 
