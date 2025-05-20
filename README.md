@@ -3,3 +3,5 @@ This is a small Machine Learning project on "Car Price Prediction" based on thei
 In this model we will enter some basic component details like engine type, fuel type, wheelbase, length & width of car, etc. to train the model
 
 For test the model we will use data like engine type, rpm, power generated, wheels size, body dimensions, etc.
+
+You can find out the fully ready website formate and code in CPPM folder.
