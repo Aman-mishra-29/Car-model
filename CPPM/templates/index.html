@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Price Predictor 🚗</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🚘 Car Price Predictor</h1>
+    <p>Enter the details of the car to predict its price.</p>
+    <form id="prediction-form">
+            <label for="wheelbase">Wheelbase:</label>
+            <input type="number" step="any" name="wheelbase" required>
 
+            <label for="curbweight">Curb Weight:</label>
+            <input type="number" step="any" name="curbweight" required>
+
+            <label for="enginesize">Engine Size:</label>
+            <input type="number" step="any" name="enginesize" required>
+
+            <label for="boreratio">Bore Ratio:</label>
+            <input type="number" step="any" name="boreratio" required>
+
+            <label for="horsepower">Horsepower:</label>
+            <input type="number" step="any" name="horsepower" required>
+
+            <label for="citympg">City MPG:</label>
+            <input type="number" step="any" name="citympg" required>
+
+            <label for="highwaympg">Highway MPG:</label>
+            <input type="number" step="any" name="highwaympg" required>
+
+            <label for="carlength">Car Length:</label>
+            <input type="number" step="any" name="carlength" required>
+
+            <label for="carwidth">Car Width:</label>
+            <input type="number" step="any" name="carwidth" required>
+
+            <label for="fueltype">Fuel Type:</label>
+            <select name="fueltype">
+                <option value="gas">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="gas">CNG</option>
+            </select>
+
+            <label for="aspiration">Aspiration:</label>
+            <select name="aspiration">
+                <option value="std">Standard</option>
+                <option value="turbo">Turbo</option>
+            </select>
+
+            <label for="carbody">Car Body:</label>
+            <select name="carbody">
+                <option value="hardtop">Hardtop</option>
+                <option value="hatchback">Hatchback</option>
+                <option value="sedan">Sedan</option>
+                <option value="wagon">Wagon</option>
+                <option value="convertible">Convertible</option>
+            </select>
+
+            <label for="drivewheel">Drive Wheel:</label>
+            <select name="drivewheel">
+                <option value="fwd">FWD</option>
+                <option value="rwd">RWD</option>
+                <option value="4wd">4WD</option>
+            </select>
+
+            <label for="enginetype">Engine Type:</label>
+            <select name="enginetype">
+                <option value="dohcv">DOHCV</option>
+                <option value="l">L</option>
+                <option value="ohc">OHC</option>
+                <option value="ohcf">OHCF</option>
+                <option value="ohcv">OHCV</option>
+                <option value="rotor">Rotor</option>
+            </select>
+
+            <label for="cylindernumber">Cylinder Number:</label>
+            <select name="cylindernumber">
+                <option value="five">Five</option>
+                <option value="four">Four</option>
+                <option value="six">Six</option>
+                <option value="three">Three</option>
+                <option value="twelve">Twelve</option>
+                <option value="two">Two</option>
+            </select>
+
+            <div class="center">
+                <button type="submit">Predict Price 💸</button>
+            </div>
+        </form>
+        <div id="result-card" class="hidden">
+            <h2>💸 Predicted Price</h2>
+            <p id="result"></p>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('prediction-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = {};
+
+            // Numerical fields
+            ['wheelbase', 'curbweight', 'enginesize', 'boreratio', 'horsepower', 'citympg', 'highwaympg', 'carlength', 'carwidth'].forEach(field => {
+                data[field] = parseFloat(formData.get(field));
+            });
+
+            // Categorical fields
+            const categoricalFields = {
+                'fueltype_gas': formData.get('fueltype') === 'gas' ? 1 : 0,
+                'aspiration_turbo': formData.get('aspiration') === 'turbo' ? 1 : 0,
+                'carbody_hardtop': formData.get('carbody') === 'hardtop' ? 1 : 0,
+                'carbody_hatchback': formData.get('carbody') === 'hatchback' ? 1 : 0,
+                'carbody_sedan': formData.get('carbody') === 'sedan' ? 1 : 0,
+                'carbody_wagon': formData.get('carbody') === 'wagon' ? 1 : 0,
+                'drivewheel_fwd': formData.get('drivewheel') === 'fwd' ? 1 : 0,
+                'drivewheel_rwd': formData.get('drivewheel') === 'rwd' ? 1 : 0,
+                'enginetype_dohcv': formData.get('enginetype') === 'dohcv' ? 1 : 0,
+                'enginetype_l': formData.get('enginetype') === 'l' ? 1 : 0,
+                'enginetype_ohc': formData.get('enginetype') === 'ohc' ? 1 : 0,
+                'enginetype_ohcf': formData.get('enginetype') === 'ohcf' ? 1 : 0,
+                'enginetype_ohcv': formData.get('enginetype') === 'ohcv' ? 1 : 0,
+                'enginetype_rotor': formData.get('enginetype') === 'rotor' ? 1 : 0,
+                'cylindernumber_five': formData.get('cylindernumber') === 'five' ? 1 : 0,
+                'cylindernumber_four': formData.get('cylindernumber') === 'four' ? 1 : 0,
+                'cylindernumber_six': formData.get('cylindernumber') === 'six' ? 1 : 0,
+                };
+
+        const res = await fetch("/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
+
+        try {
+            const result = await res.json();
+            if (result.price !== undefined) {
+                const resultCard = document.getElementById("result-card");
+                const resultText = document.getElementById("result");
+
+                if (result.price !== undefined) {
+                resultText.innerText = `$ ${result.price.toLocaleString("en-IN")}`;
+                resultCard.classList.remove("hidden");
+                } 
+                else {
+                resultText.innerText = `❌ ${result.error || "Prediction failed"}`;
+                resultCard.classList.remove("hidden");
+                }
+            }
+            else {
+            document.getElementById("result").innerText = `❌ Error: ${result.error || "Try again"}`;
+            }
+        } catch (err) {
+            document.getElementById("result").innerText = "❌ Server Error.";
+            console.error(err);
+        }
+        });
+    </script>
+</body>
+</html>
