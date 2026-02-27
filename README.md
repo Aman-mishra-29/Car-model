@@ -1,7 +1,14 @@
-This is a small Machine Learning project on "Car Price Prediction" based on their models and their accessories and parts of the cars.  
+This repository contains a complete end-to-end Machine Learning pipeline for Car Model Prediction / Classification. The project demonstrates real-world ML engineering practices including:
 
-In this model we will enter some basic component details like engine type, fuel type, wheelbase, length & width of car, etc. to train the model
+Data preprocessing
+Feature engineering
 
-For test the model we will use data like engine type, rpm, power generated, wheels size, body dimensions, etc.
+Model training & evaluation
 
-You can find out the fully ready website formate and code in CPPM folder.
+Experiment tracking
+
+Reproducible pipeline structure
+
+Production-ready code organization
+
+This project reflects practical ML workflow implementation suitable for Data Science / ML Engineer roles.
