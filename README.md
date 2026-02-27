@@ -21,23 +21,23 @@ This is treated as a Supervised Learning – Regression Problem. <br><br>
 ► Contains categorical and numerical features <br>
 ► Target variable: Car Model <br>
 ► Preprocessing includes: <br>
-  ◉ Missing value handling <br>
-  ◉ Label encoding / One-hot encoding <br>
-  ◉ Feature scaling <br>
-  ◉ Train-test split <br><br>
+  • Missing value handling <br>
+  • Label encoding / One-hot encoding <br>
+  • Feature scaling <br>
+  • Train-test split <br><br>
 **Tech Stack** <br><br>
 ► Language: Python <br>
 ► Data Preprocessing: Pandas, NumPy <br>
 ► Visualizations: Matplotlib, Seaborn <br>
 ► ML Model: Scikit-Learn <br>
 ► Matrics: <br>
-  ◉ Accuracy <br>
-  ◉ Precision <br>
-  ◉ Recall <br>
+  • Accuracy <br>
+  • Precision <br>
+  • Recall <br>
 ► Experiment Tracking: <br>
-  ◉ MLflow <br>
+  • MLflow <br>
 ► Version Control: <br>
-  ◉ Git & Github <br><br>
+  • Git & Github <br><br>
 **Machine Learning Pipeline** <br>
 1️. Data Preprocessing <br>
 ► Null value treatment <br>
@@ -50,10 +50,10 @@ This is treated as a Supervised Learning – Regression Problem. <br><br>
 ► Algorithm used: Linear Regression <br><br>
 3. Model Evaluation <br>
 ► Evaluation metrics: <br>
-    ◉ MAE (Mean Absolute Error) <br>
-    ◉ MSE (Mean Squared Error) <br>
-    ◉ Adjusted R² <br>
-    ◉ R² Score (Coefficient of Determination) <br><br>
+    • MAE (Mean Absolute Error) <br>
+    • MSE (Mean Squared Error) <br>
+    • Adjusted R² <br>
+    • R² Score (Coefficient of Determination) <br><br>
 **Model Performance** <br>
 ► R² Score: 0.81 <br>
 ► MSE: 11480961.731305972 <br>
