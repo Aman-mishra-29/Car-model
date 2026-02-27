@@ -59,13 +59,14 @@ def predict():
         ]
 
         prediction = model.predict([features])[0]
-        print("✅ Prediction:", prediction)
+        print("Prediction:", prediction)
 
         return jsonify({"price": round(prediction, 2)})
     except Exception as e:
-        print("❌ Error:", e)
+        print("Error:", e)
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host="0.0.0.0", port=port)
+
