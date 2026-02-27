@@ -57,11 +57,11 @@ This is treated as a Supervised Learning – Regression Problem. <br><br>
   ◉ Linear Regression <br><br>
 3. Model Evaluation <br>
 ◉ Evaluation metrics: <br>
-  ◉ MAE (Mean Absolute Error) <br>
-  ◉ MSE (Mean Squared Error) <br>
-  ◉ Adjusted R² <br>
-  ◉ R² Score (Coefficient of Determination) <br><br>
-**Model Performance**
+    ◉ MAE (Mean Absolute Error) <br>
+    ◉ MSE (Mean Squared Error) <br>
+    ◉ Adjusted R² <br>
+    ◉ R² Score (Coefficient of Determination) <br><br>
+**Model Performance** <br>
 ◉ R² Score: 0.81 <br>
 ◉ MSE: 11480961.731305972 <br>
 ◉ MAE: 2482.312233326611 <br>
