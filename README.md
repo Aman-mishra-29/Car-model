@@ -1,6 +1,6 @@
 This repository contains a complete end-to-end Machine Learning pipeline for Car Model Prediction / Classification. The project demonstrates real-world ML engineering practices including:
 
-Data preprocessing
+Data preprocessing <br>
 Feature engineering
 
 Model training & evaluation
