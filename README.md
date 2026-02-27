@@ -25,7 +25,7 @@ This is treated as a Supervised Learning – Regression Problem. <br><br>
   • Label encoding / One-hot encoding <br>
   • Feature scaling <br>
   • Train-test split <br><br>
-**Tech Stack** <br><br>
+**Tech Stack** <br>
 ► Language: Python <br>
 ► Data Preprocessing: Pandas, NumPy <br>
 ► Visualizations: Matplotlib, Seaborn <br>
