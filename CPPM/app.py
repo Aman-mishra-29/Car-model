@@ -21,7 +21,7 @@ def home():
 def predict():
     try:
         data = request.get_json()
-        print("🔍 Received input:", data)
+        print("Received input:", data)
 
         # Extract and convert input values to match training feature order
         features = [
@@ -69,4 +69,5 @@ def predict():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host="0.0.0.0", port=port)
+
 
