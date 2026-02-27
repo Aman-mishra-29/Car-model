@@ -1,7 +1,7 @@
 **Project Overview** <br>
 This repository contains an end-to-end Machine Learning Regression Pipeline built using Linear Regression to predict car prices based on structured input features. <br>
 The project demonstrates: <br>
-⋗ Data preprocessing <br>
+► Data preprocessing <br>
 ◉ Feature engineering <br>
 ◉ Model training & evaluation <br>
 ◉ Experiment tracking <br>
